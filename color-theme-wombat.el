@@ -30,32 +30,14 @@
 
 (defvar wombat-fg "#f6f3e8")
 (defvar wombat-bg "#242424")
-(defvar wombat-bg+1 "#4f4f4f")
-(defvar wombat-bg+2 "#5f5f5f")
-(defvar wombat-red+1 "#dca3a3")
-(defvar wombat-red "#cc9393")
-(defvar wombat-red-1 "#bc8383")
-(defvar wombat-red-2 "#ac7373")
-(defvar wombat-red-3 "#9c6363")
-(defvar wombat-red-4 "#8c5353")
-(defvar wombat-orange "#dfaf8f")
-(defvar wombat-yellow "#f0dfaf")
-(defvar wombat-yellow-1 "#e0cf9f")
-(defvar wombat-yellow-2 "#d0bf8f")
-(defvar wombat-green-1 "#5f7f5f")
-(defvar wombat-green "#7f9f7f")
-(defvar wombat-green+1 "#8fb28f")
-(defvar wombat-green+2 "#9fc59f")
-(defvar wombat-green+3 "#afd8af")
-(defvar wombat-green+4 "#bfebbf")
-(defvar wombat-cyan "#93e0e3")
-(defvar wombat-blue+1 "#94bff3")
-(defvar wombat-blue "#8cd0d3")
-(defvar wombat-blue-1 "#7cb8bb")
-(defvar wombat-blue-2 "#6ca0a3")
-(defvar wombat-blue-3 "#5c888b")
-(defvar wombat-blue-4 "#4c7073")
-(defvar wombat-magenta "#dc8cc3")
+(defvar wombat-green "#95e454")
+(defvar wombat-red "#95e454")
+(defvar wombat-blue "#8ac6f2")
+(defvar wombat-magenta "#cc99cc")
+(defvar wombat-orange "#e65c00")
+(defvar wombat-purple "#cc99cc")
+(defvar wombat-gray-1 "#444444")
+(defvar wombat-gray "#424242")
 
 (defun color-theme-wombat ()
   "The wombat color theme for Emacs."
@@ -71,28 +53,36 @@
 
      ;; Font Lock
      (font-lock-builtin-face ((t (:foreground "#8ac6f2"))))
-     (font-lock-comment-delimiter-face ((t (:italic t :slant italic :foreground "#99968b"))))
-     (font-lock-comment-face ((t (:italic t :slant italic :foreground "#99968b"))))
+     (font-lock-comment-delimiter-face ((t (:italic t :slant italic
+                                            :foreground "#99968b"))))
+     (font-lock-comment-face ((t (:italic t :slant italic
+                                  :foreground "#99968b"))))
      (font-lock-constant-face ((t (:foreground "#e5786d"))))
      (font-lock-doc-face ((t (:foreground "#99968b"))))
-     (font-lock-function-name-face ((t (:foreground "#cae682"))))
+     (font-lock-function-name-face ((t (:foreground "#cc99cc"
+                                        :bold t :italic t))))
      (font-lock-keyword-face ((t (:foreground "#8ac6f2"))))
-     (font-lock-negation-char-face ((t (:foreground "#cd0000"))))
+     (font-lock-negation-char-face ((t (:foreground "red"))))
      (font-lock-preprocessor-face ((t (:foreground "#e5786d"))))
      (font-lock-regexp-grouping-backslash ((t (:bold t :weight bold))))
      (font-lock-regexp-grouping-construct ((t (:bold t "#95e454"))))
      (font-lock-string-face ((t (:italic t :foreground "#95e454"))))
      (font-lock-type-face ((t (:foreground "#cae682"))))
      (font-lock-variable-name-face ((t (:foreground "#8ac6f2"))))
-     (font-lock-warning-face ((t (:bold t :background "#242424" :foreground "red" :weight bold))))
+     (font-lock-warning-face ((t (:bold t :foreground "red"))))
 
 
      ;; UI Items
-     (border ((t (:background "#888a85"))))
-     (fringe ((t (:background "grey10"))))
-     (mode-line ((t (:foreground "#eeeeec" :background "#333333"))))
-     (mode-line-inactive ((t (:foreground "#cccddd" :background "#222222"))))
-     (region ((t (:background "#555753"))))
+     ;(border ((t (:background "#888a85"))))
+     ;(fringe ((t (:background "grey10"))))
+     (minibuffer-prompt ((t (:foreground ,wombat-red :bold t))))
+     (mode-line ((t (:background ,wombat-gray-1 :foreground ,wombat-fg))))
+     (mode-line-emphasis ((t (:bold t))))
+     (mode-line-highlight ((t (:background ,wombat-orange :box nil))))
+     (mode-line-inactive ((t (:background ,wombat-bg
+                              :box (:line-width 1
+                                    :color ,wombat-gray :style nil)))))
+     (region ((t (:foreground ,wombat-fg :background ,wombat-gray-1))))
 
 
      ;; Highlighting
@@ -100,12 +90,12 @@
      (highlight ((t (:background "#2d2d2d"))))
      (highlight-changes-delete-face ((t (:foreground "red" :underline t))))
      (highlight-changes-face ((t (:foreground "red"))))
-     (hl-line ((t (:background "#444444"))))
+     (hl-line ((t (:background ,wombat-gray-1))))
 
 
      ;; Org-mode
      (org-date ((t (:foreground "LightSteelBlue" :underline t))))
-     (org-hide ((t (:foreground "#2e3436"))))
+     (org-hide ((t (:foreground ,wombat-bg))))
      (org-todo ((t (:inherit font-lock-keyword-face :bold t))))
      (org-level-1 ((t (:inherit font-lock-function-name-face))))
      (org-level-2 ((t (:inherit font-lock-variable-name-face))))
@@ -121,9 +111,9 @@
      (paren-face-match-light ((t (:inherit show-paren-match-face))))
      (paren-face-mismatch ((t (:inherit show-paren-mismatch-face))))
      (persp-selected-face ((t (:foreground "#729fcf"))))
-     (show-paren-match-face ((t (:background ,wombat-green :foreground "white" :bold t))))
+     (show-paren-match-face ((t (:background ,wombat-orange :foreground "white" :bold t))))
+;     (show-paren-match-face ((t (:background "#f6f3e8" :foreground "#857b6f" :bold t))))
      (show-paren-mismatch-face ((t (:background "#ad7fa8" :foreground "#2e3436"))))
-     (minibuffer-prompt ((t (:foreground "#729fcf"))))
      (info-xref ((t (:foreground "#729fcf"))))
      (info-xref-visited ((t (:foreground "#ad7fa8")))))))
 
