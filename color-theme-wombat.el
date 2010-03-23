@@ -46,7 +46,7 @@
 (defvar wombat-purple-1 "#ad7fa8")
 (defvar wombat-purple "#cc99cc")
 (defvar wombat-pink-1 "#f283b6")
-(defvar wombat-pink "#ff6eb4")
+(defvar wombat-pink "#F6B3DF")
 (defvar wombat-gray-1 "#444444")
 (defvar wombat-gray "#424242")
 (defvar wombat-gray+1 "#99968b")
@@ -94,23 +94,26 @@
 
      ;; Highlighting
      (lazy-highlight ((t (:italic t :background "yellow" :foreground "black"))))
-     ;(highlight ((t (:background "#2d2d2d"))))
-     ;(highlight-changes-delete-face ((t (:foreground "red" :underline t))))
-     ;(highlight-changes-face ((t (:foreground "red"))))
+     (highlight ((t (:background ,wombat-gray-1))))
+     (highlight-changes-delete-face ((t (:foreground "red" :underline t))))
+     (highlight-changes-face ((t (:foreground "red"))))
+     (secondary-selection ((t (:background ,wombat-blue-1 :foreground "black" :bold t))))
      (hl-line ((t (:background ,wombat-gray-1))))
 
 
      ;; Org-mode
-     (org-date ((t (:foreground ,wombat-green :underline t))))
+     (org-date ((t (:foreground "Cyan" :underline t))))
+     (org-agenda-date ((t (:foreground ,wombat-blue))))
+     (org-agenda-date-weekend ((t (:bold t :foreground ,wombat-orange :weight bold))))
      (org-hide ((t (:foreground ,wombat-bg))))
-     (org-todo ((t (:foreground ,wombat-pink-1 :bold t))))
+     (org-todo ((t (:foreground ,wombat-pink :bold t))))
      (org-hide ((t (:foreground ,wombat-bg))))
      (org-done ((t (:foreground ,wombat-green+2 :bold t))))
-     (org-level-1 ((t (:foreground ,wombat-orange+2 :bold t))))
-     (org-level-2 ((t (:inherit font-lock-variable-name-face))))
-     (org-level-3 ((t (:inherit font-lock-keyword-face))))
-     (org-level-4 ((t (:inherit font-lock-string-face))))
-     (org-level-5 ((t (:inherit font-lock-constant-face))))
+     (org-level-1 ((t (:foreground ,wombat-blue :bold t))))
+     (org-level-2 ((t (:foreground "#ee9a49")))) ;"#ee9a49"))))
+     (org-level-3 ((t (:foreground "#ff83fa"))))
+     (org-level-4 ((t (:foreground "#ffa500"))))
+     (org-level-5 ((t (:foreground "#ff4040"))))
 
      ;(comint-highlight-input ((t (:italic t :bold t))))
      ;(comint-highlight-prompt ((t (:foreground "#8ae234"))))
@@ -412,8 +415,7 @@
 
 
 ;;           (org-agenda-column-dateline ((t (:family "Bitstream Vera Sans Mono" :weight normal :slant normal :underline nil :strike-through nil :background "grey30" :height 121))))
-;;           (org-agenda-date ((t (:foreground "LightSkyBlue"))))
-;;           (org-agenda-date-weekend ((t (:bold t :foreground "LightSkyBlue" :weight bold))))
+;;
 ;;           (org-agenda-dimmed-todo-face ((t (:foreground "grey50"))))
 ;;           (org-agenda-restriction-lock ((t (:background "skyblue4"))))
 ;;           (org-agenda-structure ((t (:foreground "LightSkyBlue"))))
