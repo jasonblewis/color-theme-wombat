@@ -1,15 +1,12 @@
-color-theme-wombat
-==================
+# color-theme-wombat #
 
-Introduction
-------------
+## Introduction ##
 
 A VIM theme ported to emacs. See:
-http://dengmao.wordpress.com/2007/01/22/vim-color-scheme-wombat/
+[this blog](http://dengmao.wordpress.com/2007/01/22/vim-color-scheme-wombat/)
 for the original vim color scheme.
 
-Authors
--------
+## Authors ##
 
 * Original: Lars H. Nielsen
 * Emacs: Peter Severin, Jesus Alvarez
