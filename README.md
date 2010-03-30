@@ -1,8 +1,7 @@
 color-theme-wombat
 ==================
 
-A VIM theme ported to emacs. See:
-[](http://dengmao.wordpress.com/2007/01/22/vim-color-scheme-wombat/)
+A VIM theme ported to emacs. [Look here](http://dengmao.wordpress.com/2007/01/22/vim-color-scheme-wombat/)
 for the original vim color scheme.
 
 Notes
