@@ -2,8 +2,10 @@
 ;; Copyright (C) 2009 Jesus Alvarez
 
 ;; Author: Jesus Alvarez <demizer.one@gmail.com>
-;; URL: n/a
-;; Updated:
+;; URL: https://github.com/demizer/color-theme-wombat
+;; Version: 0.0.1
+;; Package-Requires: ((color-theme "6.6.1"))
+
 
 ;; This file is free software; you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -534,3 +536,4 @@
 ;;           (term-yellow ((t (:foreground "#fff796"))))
 ;;           (term-yellowbg ((t (:background "#fff796"))))
 
+;;; color-theme-wombat.el ends here
